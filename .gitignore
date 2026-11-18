@@ -1,0 +1,13 @@
+.env
+*.token
+*.pem
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+*.tmp
+*.swp
+/*scratch*
+/*.log
