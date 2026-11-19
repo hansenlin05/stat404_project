@@ -1,4 +1,4 @@
-﻿run_id,device_id,device_name,draw_class,slot,treatment,station,charger,cable,soc_start_pct,soc_end_pct,delta_soc,elapsed_min,rate_pct_per_min,screen_wake_ok,notes
-R03,设备1,MacBook Pro 14,,3,140W+5A线,,140W,5A线,40,60,,10.783,,,,已有耗时 10:46.98；SOC 40/60 为示例值；须确认是否按随机顺序执行
-R06,设备2,MacBook Pro M2,,2,20W+3A线,,20W,3A线,40,60,,83.682,,,,已有耗时 1:23:40.93；SOC 40/60 为示例值；须确认是否按随机顺序执行
+run_id,device_id,device_name,draw_class,slot,treatment,station,charger,cable,soc_start_pct,soc_end_pct,delta_soc,elapsed_min,rate_pct_per_min,screen_wake_ok,notes
+R03,设备1,MacBook Pro 14 (M2),,3,140W+5A线,,140W,5A线,40,60,,10.783,,,,已有耗时 10:46.98；SOC 40/60 为示例值；须确认是否按随机顺序执行
+R02,设备1,MacBook Pro 14 (M2),,2,20W+3A线,,20W,3A线,40,60,,83.682,,,,已有耗时 1:23:40.93；用户确认 M2 就是这台 MacBook Pro 14，不是第二台 MBP；SOC 40/60 为示例值；须确认是否按随机顺序执行
 R09,设备3,iPhone 16 Pro,,1,20W+3A线,,20W,3A线,40,60,,13.291,,,,已有耗时 13:17.45；用户确认 iPhone 两种写法是同一条记录，只录一次；须确认是否按随机顺序执行
