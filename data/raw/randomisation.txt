@@ -1,0 +1,4 @@
+seed: 20261120
+station1_start: 20W
+station2_start: 140W
+Swap chargers between stations after run 16.

@@ -1,10 +1,10 @@
 # Research progress
 
-Snapshot taken on 17 November 2026. All dates below are local course dates.
+Snapshot taken on 17 November 2026, with an equipment and randomisation update on 19 November. All dates below are local course dates.
 
 ## Proposal
 
-The team submitted a two-page proposal on 6 November. A marked copy of version 18 came back with five comments dated 14 November. The copy carries no grade and no request to resubmit. The grade and the resubmission status still need confirmation from the lab instructor.
+The team submitted a two-page proposal on 6 November. A marked copy of version 18 came back with five comments dated 14 November. The user confirmed on 17 November that the proposal received full marks. No resubmission is required. The comments are refinement suggestions for the presentation and Q&A, not conditions on the grade.
 
 Version check by content: version 16 to version 17 was the substantive revision. It removed the Windows exclusion sentence, changed the pilot to measure each device and classify it as high-draw or low-draw, and added two planned contrasts. Version 18 changed only two presentation details. The marked copy has the same text as version 18, so version 18 is the proposal source of record.
 
@@ -26,13 +26,27 @@ The final list of eight devices is not locked. The randomisation seed, the run l
 
 The proposal gives about 8 to 12 hours of total station time. That figure is in the submitted text, but no derivation is recorded. Treat it as a planning estimate until the pilot gives real timings.
 
-## Open items
+## Equipment and randomisation update, 19 November
 
-Confirm the proposal grade and whether any resubmission is required.
+Two MacBook Pro units are now available. The first is a 14-inch unit recorded as D1. The second is registered as D2 and its model and charger rating still need to be confirmed. An iPhone 16 Pro is proposed as D3. Devices D4 to D8 are not yet identified. All eight must charge from both the 140 W and the 20 W unit.
+
+The draw class is not decided by the seed. It comes only from the measured negotiated draw in the 40% to 60% window. The two laptops are candidate high-draw units and the phone is a candidate low-draw unit, but all three remain unmeasured. Two high-draw blocks are the minimum and three are preferable.
+
+The treatment order was generated with seed 20261120 and saved in `data/raw/randomisation.csv`. Station 1 starts at 20 W and station 2 at 140 W, with the chargers swapped after run 16. The script was rerun under R 4.5.2 on 19 November and produced a byte-identical CSV. Analysis script `scripts/analysis.R` also ran end to end on synthetic data under R 4.5.2. R is installed at `D:\Program Files\R\R-4.5.2`, even though `Rscript` is not on PATH.
+
+Three timing observations are now on record. The MBP14 measurement of 10:46.98 used the 140 W charger with the 5 A cable and belongs to D1 slot 3, so it is R03 rather than R01. The MacBook Pro M2 measurement of 1:23:40.93 used the 20 W charger with the 3 A cable and belongs to D2 slot 2, so it is R06. The iPhone 16 Pro measurement of 13:17.45 used the 20 W charger with the 3 A cable and belongs to D3 slot 1, so it is R09. The user confirmed that the two iPhone spellings refer to one observation, so it is entered once. Each row is saved in `data/raw/known_runs.csv` and in the collection workbook.
+
+Each of the three rows has only an elapsed time. None has a measured window draw, so none determines a draw class. The 40 and 60 SOC endpoints are example values and must be checked against the screen. It is still unconfirmed whether the three runs followed the randomised order. If any was taken before randomisation, it is a pilot measurement and cannot count among the 32 formal runs.
+
+The collection sheet now uses readable labels. Chargers are 140W and 20W, cables are 5A线 and 3A线, and draw classes are 高功耗 and 低功耗. `scripts/analysis.R` normalises those labels before fitting, checks that every device has one run per treatment, and stops if any draw class is missing. It was rerun under R 4.5.2 with synthetic data carrying the new labels and completed without error.
+
+## Open items
 
 Run the pilot and classify every device by measured window draw.
 
-Lock the eight-device list, confirm each device charges from the 20 W unit, and record the randomisation seed.
+Lock the eight-device list and confirm each device charges from the 20 W unit.
+
+Keep seed 20261120. Device names may change but the device to device_id mapping may not.
 
 Collect 32 runs, rebuild the analysis from raw data, and check the model assumptions.
 
