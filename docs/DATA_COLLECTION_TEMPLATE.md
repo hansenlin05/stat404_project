@@ -41,38 +41,38 @@ The order is fixed by seed `20261120` and is already filled in the workbook. Do 
 
 | run_id | device_id | device_name | draw_class | slot | treatment | station | charger | cable | soc_start_pct | soc_end_pct | delta_soc | elapsed_min | rate_pct_per_min | screen_wake_ok | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| R01 | D1 | MacBookPro14_M2 | | 1 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
-| R02 | D1 | MacBookPro14_M2 | | 2 | 20W_3A | | 20W | 3A | 40 | 60 | auto | 83.682 | auto | | Elapsed 1:23:40.93; M2 is this MacBook Pro 14, not a second unit; SOC is an example |
-| R03 | D1 | MacBookPro14_M2 | | 3 | 140W_5A | | 140W | 5A | 40 | 60 | auto | 10.783 | auto | | Elapsed 10:46.98; SOC is an example |
-| R04 | D1 | MacBookPro14_M2 | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
-| R05 | D2 | MBP2_unknown | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
-| R06 | D2 | MBP2_unknown | | 2 | 20W_3A | | 20W | 3A | | | auto | | auto | | Not tested yet |
-| R07 | D2 | MBP2_unknown | | 3 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
-| R08 | D2 | MBP2_unknown | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
-| R09 | D3 | iPhone16Pro | | 1 | 20W_3A | | 20W | 3A | 40 | 60 | auto | 13.291 | auto | | Elapsed 13:17.45; two spellings are one record |
-| R10 | D3 | iPhone16Pro | | 2 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
-| R11 | D3 | iPhone16Pro | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
-| R12 | D3 | iPhone16Pro | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
-| R13 | D4 | | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
-| R14 | D4 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
-| R15 | D4 | | | 3 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
-| R16 | D4 | | | 4 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
-| R17 | D5 | | | 1 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
-| R18 | D5 | | | 2 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
-| R19 | D5 | | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
-| R20 | D5 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
-| R21 | D6 | | | 1 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
-| R22 | D6 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
-| R23 | D6 | | | 3 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
-| R24 | D6 | | | 4 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
-| R25 | D7 | | | 1 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
-| R26 | D7 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
-| R27 | D7 | | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
-| R28 | D7 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
-| R29 | D8 | | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
-| R30 | D8 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
-| R31 | D8 | | | 3 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
-| R32 | D8 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
+| R01 | D1 | MacBookPro14_M2 | | 1 | 140W_3A | | 140W | 3A | | | auto | | auto | yes | |
+| R02 | D1 | MacBookPro14_M2 | | 2 | 20W_3A | | 20W | 3A | 40 | 60 | auto | 83.682 | auto | yes | Elapsed 1:23:40.93; M2 is this MacBook Pro 14, not a second unit; SOC is an example |
+| R03 | D1 | MacBookPro14_M2 | | 3 | 140W_5A | | 140W | 5A | 40 | 60 | auto | 10.783 | auto | yes | Elapsed 10:46.98; SOC is an example |
+| R04 | D1 | MacBookPro14_M2 | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | yes | |
+| R05 | D2 | MBP2_unknown | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | yes | |
+| R06 | D2 | MBP2_unknown | | 2 | 20W_3A | | 20W | 3A | | | auto | | auto | yes | Not tested yet |
+| R07 | D2 | MBP2_unknown | | 3 | 140W_3A | | 140W | 3A | | | auto | | auto | yes | |
+| R08 | D2 | MBP2_unknown | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | yes | |
+| R09 | D3 | iPhone16Pro | | 1 | 20W_3A | | 20W | 3A | 40 | 60 | auto | 13.291 | auto | yes | Elapsed 13:17.45; two spellings are one record |
+| R10 | D3 | iPhone16Pro | | 2 | 140W_3A | | 140W | 3A | | | auto | | auto | yes | |
+| R11 | D3 | iPhone16Pro | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | yes | |
+| R12 | D3 | iPhone16Pro | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | yes | |
+| R13 | D4 | | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | yes | |
+| R14 | D4 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | yes | |
+| R15 | D4 | | | 3 | 140W_3A | | 140W | 3A | | | auto | | auto | yes | |
+| R16 | D4 | | | 4 | 20W_3A | | 20W | 3A | | | auto | | auto | yes | |
+| R17 | D5 | | | 1 | 20W_5A | | 20W | 5A | | | auto | | auto | yes | |
+| R18 | D5 | | | 2 | 20W_3A | | 20W | 3A | | | auto | | auto | yes | |
+| R19 | D5 | | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | yes | |
+| R20 | D5 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | yes | |
+| R21 | D6 | | | 1 | 140W_3A | | 140W | 3A | | | auto | | auto | yes | |
+| R22 | D6 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | yes | |
+| R23 | D6 | | | 3 | 20W_3A | | 20W | 3A | | | auto | | auto | yes | |
+| R24 | D6 | | | 4 | 140W_5A | | 140W | 5A | | | auto | | auto | yes | |
+| R25 | D7 | | | 1 | 20W_3A | | 20W | 3A | | | auto | | auto | yes | |
+| R26 | D7 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | yes | |
+| R27 | D7 | | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | yes | |
+| R28 | D7 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | yes | |
+| R29 | D8 | | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | yes | |
+| R30 | D8 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | yes | |
+| R31 | D8 | | | 3 | 20W_3A | | 20W | 3A | | | auto | | auto | yes | |
+| R32 | D8 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | yes | |
 
 Field notes:
 

@@ -1,4 +1,4 @@
 run_id,device_id,device_name,draw_class,slot,treatment,station,charger,cable,soc_start_pct,soc_end_pct,delta_soc,elapsed_min,rate_pct_per_min,screen_wake_ok,notes
-R03,D1,MacBookPro14_M2,,3,140W_5A,,140W,5A,40,60,,10.783,,,,Elapsed 10:46.98; SOC 40/60 is an example value; confirm the run followed the randomised order
-R02,D1,MacBookPro14_M2,,2,20W_3A,,20W,3A,40,60,,83.682,,,,Elapsed 1:23:40.93; M2 is this MacBook Pro 14 and not a second unit; SOC 40/60 is an example value; confirm the run followed the randomised order
-R09,D3,iPhone16Pro,,1,20W_3A,,20W,3A,40,60,,13.291,,,,Elapsed 13:17.45; the two iPhone spellings are one record; confirm the run followed the randomised order
+R03,D1,MacBookPro14_M2,,3,140W_5A,,140W,5A,40,60,,10.783,,yes,Elapsed 10:46.98; SOC 40/60 is an example value; confirm the run followed the randomised order
+R02,D1,MacBookPro14_M2,,2,20W_3A,,20W,3A,40,60,,83.682,,yes,Elapsed 1:23:40.93; M2 is this MacBook Pro 14 and not a second unit; SOC 40/60 is an example value; confirm the run followed the randomised order
+R09,D3,iPhone16Pro,,1,20W_3A,,20W,3A,40,60,,13.291,,yes,Elapsed 13:17.45; the two iPhone spellings are one record; confirm the run followed the randomised order
