@@ -38,7 +38,7 @@ Three timing observations are now on record. The MacBook Pro 14 (M2) measurement
 
 Each of the three rows has only an elapsed time. None has a measured window draw, so none determines a draw class. The 40 and 60 SOC endpoints are example values and must be checked against the screen. It is still unconfirmed whether the three runs followed the randomised order. If any was taken before randomisation, it is a pilot measurement and cannot count among the 32 formal runs.
 
-The collection sheet now uses readable labels. Chargers are 140W and 20W, cables are 5A线 and 3A线, and draw classes are 高功耗 and 低功耗. `scripts/analysis.R` normalises those labels before fitting, checks that every device has one run per treatment, and stops if any draw class is missing. It was rerun under R 4.5.2 with synthetic data carrying the new labels and completed without error.
+The collection sheet uses English tokens that match the randomisation table. Device ids are D1 to D8, treatments are 140W_5A, 140W_3A, 20W_5A and 20W_3A, chargers are 140W and 20W, cables are 5A and 3A, and draw classes are high and low. `scripts/analysis.R` reads these tokens without label conversion, checks that every device has one run per treatment, and stops if any draw class is missing. It was rerun under R 4.5.2 with synthetic data using the English tokens and completed without error. The residual degrees of freedom were 21.
 
 ## Open items
 

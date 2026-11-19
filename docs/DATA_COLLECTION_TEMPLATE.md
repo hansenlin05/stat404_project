@@ -1,103 +1,103 @@
-# STAT 404 数据收集模板
+# STAT 404 data collection template
 
-把下面两张表分别复制到 OneDrive 共享文档的两个工作表（或两段）里。所有数字用半角 ASCII，空白格留空不要填 "NA" 或 "—"。起止时间列已删除，只记录 `elapsed_min`。
+Copy the two data sheets below into the shared document. Use ASCII digits and letters. Leave empty cells empty, and do not type NA or a dash. Clock times are not recorded. Only `elapsed_min` is kept.
 
-表格里用直白标签：充电器写 `140W` / `20W`，线缆写 `5A线` / `3A线`，功耗类别写 `高功耗` / `低功耗`。
+All labels are English tokens that match the codes in the randomisation table. Charger values are `140W` and `20W`. Cable values are `5A` and `3A`. Treatment values are `140W_5A`, `140W_3A`, `20W_5A` and `20W_3A`. Draw class values are `high` and `low`. These tokens can be read into R without any label conversion.
 
-响应变量的计算口径：`rate = delta_soc / elapsed_min`（%/min）。`delta_soc` 是屏幕上实际增加的 SOC 百分点，默认窗口 40→60 就是 20，但如果屏幕读数不是正好 20，按实际读数填。`elapsed_min` = 分钟数，秒数除以 60；例如 10:46.98 = 10 + 46.98/60 = 10.783 分钟。
+The response is `rate = delta_soc / elapsed_min` in percent per minute. `delta_soc` is the SOC gain shown on screen. The default window is 40 to 60, so `delta_soc` is 20. Use the real reading if it differs. `elapsed_min` is minutes, so 10:46.98 becomes 10 plus 46.98 divided by 60, which is 10.783.
 
 ---
 
-## 表 1：Pilot 设备分类表（每台设备一行，共 8 行）
+## Table 1: pilot device classification (one row per device, eight rows)
 
-用途：决定每台设备是 `高功耗` 还是 `低功耗`，这是 TA 第 1 条批注的直接证据。判据是 40–60% 窗口内 watt 显示线缆读到的协商功率，不是充电器铭牌瓦数，也不是充电耗时。
+This table decides whether each device is `high` or `low`. It is the direct answer to TA comment 1. The criterion is the power measured by a watt meter in the 40 to 60 percent window. Charger nameplate power and elapsed time are not valid criteria.
 
 | device_id | device_name | device_type | both_chargers_ok | negotiated_draw_W_in_window | draw_class |
 | --- | --- | --- | --- | --- | --- |
-| 设备1 | MacBook Pro 14 (M2) | 笔记本电脑 | 待填 是/否 | 待填 W | 待填 高功耗/低功耗 |
-| 设备2 | 第二台 MacBook Pro（未测试） | 笔记本电脑 | 待填 | 待填 | 待填 |
-| 设备3 | iPhone 16 Pro | 手机 | 待填 | 待填 | 待填 |
-| 设备4 |  |  |  |  |  |
-| 设备5 |  |  |  |  |  |
-| 设备6 |  |  |  |  |  |
-| 设备7 |  |  |  |  |  |
-| 设备8 |  |  |  |  |  |
+| D1 | MacBookPro14_M2 | laptop | yes/no | W | high/low |
+| D2 | MBP2_unknown | laptop | | | |
+| D3 | iPhone16Pro | phone | | | |
+| D4 | | | | | |
+| D5 | | | | | |
+| D6 | | | | | |
+| D7 | | | | | |
+| D8 | | | | | |
 
-字段说明：
+Field notes:
 
-- `both_chargers_ok`：该设备能否在 140 W 和 20 W 两个充电器上都正常协商充电，填 `是` 或 `否`。只要有一个不行，这台设备不能当完整区组。
-- `negotiated_draw_W_in_window`：用带 watt 显示的线缆，在 SOC 处于 40–60% 时读到的协商功率。
-- `draw_class`：>60 W 填 `高功耗`，≤60 W 填 `低功耗`。分组在 pilot 完成后锁定，之后不再改。
-- `device_id` 里的数字就是随机表里的设备编号；设备改名不影响随机化。
-- **功耗分组来自实测功率，与随机种子无关。** 按常见规格推断，MacBook Pro 14 (M2) 与尚未测试的第二台 MacBook Pro 是 `高功耗` 候选，iPhone 16 Pro 是 `低功耗` 候选；这只是待验证的先验判断。`高功耗` 至少 2 台，最好 3 台。
+- `both_chargers_ok` is `yes` when the device charges from both the 140 W and the 20 W charger. Enter `no` otherwise. A device that fails either charger cannot form a complete block.
+- `negotiated_draw_W_in_window` is the power in watts shown by the watt meter in the 40 to 60 percent window.
+- `draw_class` is `high` above 60 W and `low` at or below 60 W. Lock the class after the pilot.
+- The number in `device_id` matches the randomisation table. Renaming a device does not change the randomisation.
+- **The power measurement sets the class, not the random seed.** From common specifications the two MacBook Pro units are likely `high` and the iPhone 16 Pro is likely `low`. This is a prior guess only. At least two `high` devices are needed and three are preferable.
 
 ---
 
-## 表 2：正式运行记录表（32 行 = 8 设备 × 4 处理）
+## Table 2: run records (32 rows, eight devices by four treatments)
 
-处理标签：`140W+5A线` = 140 W 充电器 + 100 W（5 A e-marked）线缆；`140W+3A线` = 140 W + 标准 3 A；`20W+5A线` = 20 W 充电器 + 5 A 线；`20W+3A线` = 20 W + 标准 3 A。
+Treatment codes: `140W_5A` is the 140 W charger with the 100 W (5 A e-marked) cable. `140W_3A` is the 140 W charger with a standard 3 A cable. `20W_5A` is the 20 W charger with the 5 A cable. `20W_3A` is the 20 W charger with a standard 3 A cable.
 
-处理顺序已由 seed `20261120` 固定，Excel 中已按随机表预填，**不要自行改动顺序**。工位 1 起始 20 W，工位 2 起始 140 W，run 16 之后两站充电器互换。该随机表已用本机 R 4.5.2 复现，与 `randomisation.csv` 逐字节一致。
+The order is fixed by seed `20261120` and is already filled in the workbook. Do not change it. Station 1 starts with 20 W, station 2 starts with 140 W, and the chargers swap after run 16. The table was reproduced with R 4.5.2 and matches `randomisation.csv` byte for byte.
 
 | run_id | device_id | device_name | draw_class | slot | treatment | station | charger | cable | soc_start_pct | soc_end_pct | delta_soc | elapsed_min | rate_pct_per_min | screen_wake_ok | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| R01 | 设备1 | MacBook Pro 14 (M2) | 待填 | 1 | 140W+3A线 | 待填 | 140W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R02 | 设备1 | MacBook Pro 14 (M2) | 待填 | 2 | 20W+3A线 | 待填 | 20W | 3A线 | 示例 40 | 示例 60 | 自动 | 83.682 | 自动 | 待填 | 已有耗时 1:23:40.93；M2 就是这台 MacBook Pro 14，不是第二台 MBP；SOC 为示例值 |
-| R03 | 设备1 | MacBook Pro 14 (M2) | 待填 | 3 | 140W+5A线 | 待填 | 140W | 5A线 | 示例 40 | 示例 60 | 自动 | 10.783 | 自动 | 待填 | 已有耗时 10:46.98；SOC 为示例值 |
-| R04 | 设备1 | MacBook Pro 14 (M2) | 待填 | 4 | 20W+5A线 | 待填 | 20W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R05 | 设备2 | 第二台 MacBook Pro（未测试） | 待填 | 1 | 140W+5A线 | 待填 | 140W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R06 | 设备2 | 第二台 MacBook Pro（未测试） | 待填 | 2 | 20W+3A线 | 待填 | 20W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 | 尚未测试 |
-| R07 | 设备2 | 第二台 MacBook Pro（未测试） | 待填 | 3 | 140W+3A线 | 待填 | 140W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R08 | 设备2 | 第二台 MacBook Pro（未测试） | 待填 | 4 | 20W+5A线 | 待填 | 20W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R09 | 设备3 | iPhone 16 Pro | 待填 | 1 | 20W+3A线 | 待填 | 20W | 3A线 | 示例 40 | 示例 60 | 自动 | 13.291 | 自动 | 待填 | 已有耗时 13:17.45；iPhone 两种写法经确认是同一条，只录一次 |
-| R10 | 设备3 | iPhone 16 Pro | 待填 | 2 | 140W+3A线 | 待填 | 140W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R11 | 设备3 | iPhone 16 Pro | 待填 | 3 | 140W+5A线 | 待填 | 140W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R12 | 设备3 | iPhone 16 Pro | 待填 | 4 | 20W+5A线 | 待填 | 20W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R13 | 设备4 |  | 待填 | 1 | 140W+5A线 | 待填 | 140W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R14 | 设备4 |  | 待填 | 2 | 20W+5A线 | 待填 | 20W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R15 | 设备4 |  | 待填 | 3 | 140W+3A线 | 待填 | 140W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R16 | 设备4 |  | 待填 | 4 | 20W+3A线 | 待填 | 20W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R17 | 设备5 |  | 待填 | 1 | 20W+5A线 | 待填 | 20W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R18 | 设备5 |  | 待填 | 2 | 20W+3A线 | 待填 | 20W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R19 | 设备5 |  | 待填 | 3 | 140W+5A线 | 待填 | 140W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R20 | 设备5 |  | 待填 | 4 | 140W+3A线 | 待填 | 140W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R21 | 设备6 |  | 待填 | 1 | 140W+3A线 | 待填 | 140W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R22 | 设备6 |  | 待填 | 2 | 20W+5A线 | 待填 | 20W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R23 | 设备6 |  | 待填 | 3 | 20W+3A线 | 待填 | 20W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R24 | 设备6 |  | 待填 | 4 | 140W+5A线 | 待填 | 140W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R25 | 设备7 |  | 待填 | 1 | 20W+3A线 | 待填 | 20W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R26 | 设备7 |  | 待填 | 2 | 20W+5A线 | 待填 | 20W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R27 | 设备7 |  | 待填 | 3 | 140W+5A线 | 待填 | 140W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R28 | 设备7 |  | 待填 | 4 | 140W+3A线 | 待填 | 140W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R29 | 设备8 |  | 待填 | 1 | 140W+5A线 | 待填 | 140W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R30 | 设备8 |  | 待填 | 2 | 20W+5A线 | 待填 | 20W | 5A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R31 | 设备8 |  | 待填 | 3 | 20W+3A线 | 待填 | 20W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
-| R32 | 设备8 |  | 待填 | 4 | 140W+3A线 | 待填 | 140W | 3A线 | 待填 | 待填 | 自动 | 待填 | 自动 | 待填 |  |
+| R01 | D1 | MacBookPro14_M2 | | 1 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
+| R02 | D1 | MacBookPro14_M2 | | 2 | 20W_3A | | 20W | 3A | 40 | 60 | auto | 83.682 | auto | | Elapsed 1:23:40.93; M2 is this MacBook Pro 14, not a second unit; SOC is an example |
+| R03 | D1 | MacBookPro14_M2 | | 3 | 140W_5A | | 140W | 5A | 40 | 60 | auto | 10.783 | auto | | Elapsed 10:46.98; SOC is an example |
+| R04 | D1 | MacBookPro14_M2 | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
+| R05 | D2 | MBP2_unknown | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
+| R06 | D2 | MBP2_unknown | | 2 | 20W_3A | | 20W | 3A | | | auto | | auto | | Not tested yet |
+| R07 | D2 | MBP2_unknown | | 3 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
+| R08 | D2 | MBP2_unknown | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
+| R09 | D3 | iPhone16Pro | | 1 | 20W_3A | | 20W | 3A | 40 | 60 | auto | 13.291 | auto | | Elapsed 13:17.45; two spellings are one record |
+| R10 | D3 | iPhone16Pro | | 2 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
+| R11 | D3 | iPhone16Pro | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
+| R12 | D3 | iPhone16Pro | | 4 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
+| R13 | D4 | | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
+| R14 | D4 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
+| R15 | D4 | | | 3 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
+| R16 | D4 | | | 4 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
+| R17 | D5 | | | 1 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
+| R18 | D5 | | | 2 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
+| R19 | D5 | | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
+| R20 | D5 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
+| R21 | D6 | | | 1 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
+| R22 | D6 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
+| R23 | D6 | | | 3 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
+| R24 | D6 | | | 4 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
+| R25 | D7 | | | 1 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
+| R26 | D7 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
+| R27 | D7 | | | 3 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
+| R28 | D7 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
+| R29 | D8 | | | 1 | 140W_5A | | 140W | 5A | | | auto | | auto | | |
+| R30 | D8 | | | 2 | 20W_5A | | 20W | 5A | | | auto | | auto | | |
+| R31 | D8 | | | 3 | 20W_3A | | 20W | 3A | | | auto | | auto | | |
+| R32 | D8 | | | 4 | 140W_3A | | 140W | 3A | | | auto | | auto | | |
 
-字段说明：
+Field notes:
 
-- `slot`：该设备内的第几次运行，1–4，由随机表决定。
-- `station`：工位 1 或 2。两个站同时跑，每个站一个功率档；run 16 之后两站的充电器互换。
-- `soc_start_pct` / `soc_end_pct`：屏幕读到的起止 SOC，默认 40 / 60，按实际读数填。
-- `delta_soc`：`soc_end_pct - soc_start_pct`，自动计算。
-- `elapsed_min`：从第一次读到 40% 到第一次读到 60% 的分钟数，保留 3 位小数。起止时刻不进模型，已删除，不需要记录。
-- `rate_pct_per_min`：`delta_soc / elapsed_min`，自动计算。
-- `draw_class`：pilot 后统一填 `高功耗` 或 `低功耗`，分析前必须填满。
-- `screen_wake_ok`：唤醒间隔是否约 2 分钟一次，不合规填 `否` 并在 notes 写清楚。
+- `slot` is the run number within a device, from 1 to 4, set by the randomisation table.
+- `station` is 1 or 2. Both stations run at once with one charger each. The chargers swap after run 16.
+- `soc_start_pct` and `soc_end_pct` are screen readings with 40 and 60 as defaults.
+- `delta_soc` is `soc_end_pct - soc_start_pct`, calculated automatically.
+- `elapsed_min` runs from the first 40 percent reading to the first 60 percent reading, with three decimals. Clock times are not needed.
+- `rate_pct_per_min` is `delta_soc / elapsed_min`, calculated automatically.
+- `draw_class` is filled after the pilot with `high` or `low`. It must be complete before analysis.
+- `screen_wake_ok` is `yes` when wakes were about two minutes apart. Enter `no` and explain in `notes` otherwise.
 
-三条实测记录：
+Three observed timings:
 
-- MacBook Pro 14 (M2)：10:46.98 = 10.783 分钟，`140W+5A线`，对应 R03。
-- 同一台 MacBook Pro 14 (M2)：1:23:40.93 = 83.682 分钟，`20W+3A线`，对应 R02。用户确认 M2 就是这台 MacBook Pro 14，**不是第二台 MBP**；第二台 MBP 尚未测试。
-- iPhone 16 Pro：13:17.45 = 13.291 分钟，`20W+3A线`，对应 R09。用户确认 `13:17:45` 与 `13:17.45` 是同一条记录，只录一次。
+- MacBookPro14_M2: 10:46.98 is 10.783 minutes with `140W_5A` at R03.
+- The same MacBookPro14_M2: 1:23:40.93 is 83.682 minutes with `20W_3A` at R02. The M2 is this MacBook Pro 14, not the second unit. The second MBP has not been tested.
+- iPhone16Pro: 13:17.45 is 13.291 minutes with `20W_3A` at R09. The two iPhone spellings are one record.
 
-三条记录都只有耗时，没有 40–60% 窗口内的协商功率读数，不能据此判功耗类别。SOC 40/60 是示例值，须按实际读数复核。还必须确认三次是否按随机顺序执行；若是随机化之前的预跑，只能算 pilot，不能计入 32 次正式运行。
+Each timing has no measured window power, so none sets a draw class. SOC 40 and 60 are example values and need checking against the screen. Confirm whether the runs followed the randomised order. A run taken before randomisation is a pilot measurement and cannot count among the 32 formal runs.
 
 ---
 
-## 收集顺序
+## Collection order
 
-1. 先填表 1 的 pilot，锁定 8 台设备和功耗类别。若 `高功耗` 设备少于 2 台，按 TA 第 1 条批注补借设备，否则交互对比没有支撑。
-2. 设备清单锁定后核对设备编号与随机表的设备编号一致。随机表已生成，不要重跑或改 seed；改名不影响随机化。
-3. 正式运行时逐行填表 2，当天录入，不要事后补记。耗时直接用秒表读数换算。
-4. 32 行填满、功耗类别也填满后，把表 2 另存为 `runs.csv` 放进仓库 `data/raw/`，再运行 `analysis.R`。
+1. Fill Table 1 first and lock the eight devices and their draw classes. If fewer than two devices are `high`, borrow more equipment.
+2. After the device list is locked, check that the device numbers match the randomisation table. Do not rerun the seed.
+3. Fill Table 2 row by row during collection. Enter each run on the same day and convert the stopwatch reading into minutes.
+4. When all 32 rows and all draw classes are filled, save Table 2 as `runs.csv` under `data/raw/` and run `analysis.R`.

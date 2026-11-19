@@ -1,24 +1,20 @@
-# Load collected run data
+# Load collected run data.
+# The collection workbook uses English tokens that match randomisation.csv,
+# so no label conversion is needed before analysis.
 runs <- read.csv("data/clean/runs.csv", stringsAsFactors = FALSE)
 head(runs)
 names(runs)
 
-# The collection sheet uses readable labels. Normalise them for analysis.
-# 140W+5A线 / 140W / 5A线 -> 140W / 5A, and 高功耗 -> high.
-runs$charger <- factor(
-  ifelse(grepl("140", as.character(runs$charger)), "140W", "20W"),
-  levels = c("20W", "140W")
-)
-runs$cable <- factor(
-  ifelse(grepl("5A", as.character(runs$cable)), "5A", "3A"),
-  levels = c("3A", "5A")
-)
-runs$draw_class <- factor(
-  ifelse(grepl("高", as.character(runs$draw_class)), "high", "low"),
-  levels = c("high", "low")
-)
+runs$charger <- factor(runs$charger, levels = c("20W", "140W"))
+runs$cable <- factor(runs$cable, levels = c("3A", "5A"))
 
 # The draw class comes from the pilot measurement, not from the seed.
+# Accept both English tokens and the legacy labels for existing sheets.
+runs$draw_class <- factor(
+  ifelse(grepl("^high$", as.character(runs$draw_class), ignore.case = TRUE), "high",
+         ifelse(grepl("^low$", as.character(runs$draw_class), ignore.case = TRUE), "low", NA)),
+  levels = c("high", "low")
+)
 if (anyNA(runs$draw_class)) {
   stop("Some runs have no draw_class. Complete the pilot and fill the column before analysis.")
 }
@@ -40,7 +36,7 @@ runs$device <- factor(runs$device_name)
 runs$charge_rate <- runs$delta_soc / runs$elapsed_min
 table(runs$device, runs$treatment)
 
-# Main ANOVA with device blocking
+# Main ANOVA with device blocking.
 fit <- aov(charge_rate ~ device + charger * cable, data = runs)
 summary(fit)
 
@@ -49,22 +45,22 @@ error_degrees_freedom <- df.residual(fit)
 mean_square_error
 error_degrees_freedom
 
-# Treatment cell means and standard errors
+# Treatment cell means and standard errors.
 cells <- expand.grid(charger = c("20W", "140W"), cable = c("3A", "5A"))
 cells$treatment <- paste(cells$charger, cells$cable, sep = "_")
 cells$mean_rate <- tapply(runs$charge_rate, runs$treatment, mean)[cells$treatment]
 cells$standard_error <- sqrt(mean_square_error / 8)
 cells
 
-# All pairwise treatment comparisons
+# All pairwise treatment comparisons.
 fit_treatment <- aov(charge_rate ~ device + treatment, data = runs)
 TukeyHSD(fit_treatment, "treatment")
 
-# Per-device treatment means
+# Per-device treatment means.
 device_means <- tapply(runs$charge_rate, list(runs$device, runs$treatment), mean)
 head(device_means)
 
-# Interaction contrast within each device
+# Interaction contrast within each device.
 device_contrast <- device_means[, "140W_5A"] - device_means[, "140W_3A"] -
   device_means[, "20W_5A"] + device_means[, "20W_3A"]
 device_contrast
@@ -76,6 +72,10 @@ high_count <- sum(device_class == "high")
 low_count <- sum(device_class == "low")
 high_count
 low_count
+
+if (high_count < 2 || low_count < 1) {
+  warning("Fewer than two high devices or no low device. The subgroup interaction is exploratory.")
+}
 
 high_contrast <- mean(device_contrast[device_class == "high"])
 low_contrast <- mean(device_contrast[device_class == "low"])
@@ -97,7 +97,7 @@ results <- rbind(
 )
 results
 
-# Residual and interaction diagnostics
+# Residual and interaction diagnostics.
 plot(fitted(fit), residuals(fit))
 qqnorm(residuals(fit))
 qqline(residuals(fit))
