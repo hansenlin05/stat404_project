@@ -1,0 +1,12 @@
+run_id,device_id,device_name,draw_class,slot,treatment,station,charger,cable,soc_start_pct,soc_end_pct,delta_soc,elapsed_min,rate_pct_per_min,screen_wake_ok,notes
+R01,D1,MacBookPro14_M2Pro_2023,high,1,140W_3A,2,140W,3A,40,60,,15.325,,yes,Elapsed 15:19.51 with 140W_3A.
+R02,D1,MacBookPro14_M2Pro_2023,high,2,20W_3A,1,20W,3A,40,60,,83.682,,yes,Elapsed 1:23:40.93 with 20W_3A.
+R03,D1,MacBookPro14_M2Pro_2023,high,3,140W_5A,2,140W,5A,40,60,,10.783,,yes,Elapsed 10:46.98 with 140W_5A.
+R04,D1,MacBookPro14_M2Pro_2023,high,4,20W_5A,1,20W,5A,40,60,,86.526,,yes,Elapsed 1:26:31.54 with 20W_5A.
+R05,D2,MacBookPro14_M1_2021,high,1,140W_5A,2,140W,5A,40,60,,12.228,,yes,Elapsed 12:13.7 with 140W_5A.
+R09,D3,iPhone16Pro,low,1,20W_3A,1,20W,3A,40,60,,13.291,,yes,Elapsed 13:17.45 with 20W_3A.
+R10,D3,iPhone16Pro,low,2,140W_3A,2,140W,3A,40,60,,13.227,,yes,Elapsed 13:13.64 with 140W_3A.
+R11,D3,iPhone16Pro,low,3,140W_5A,2,140W,5A,40,60,,13.447,,yes,Elapsed 13:26.82 with 140W_5A.
+R12,D3,iPhone16Pro,low,4,20W_5A,1,20W,5A,40,60,,13.06,,yes,Elapsed 13:03.6 with 20W_5A.
+R16,D4,iPhone17Pro,low,4,20W_3A,1,20W,3A,40,60,,11.413,,yes,Elapsed 11:24.77 with 20W_3A.
+R23,D6,iPhone15ProMax,low,3,20W_3A,2,20W,3A,40,60,,13.671,,yes,Elapsed 13:40.23 with 20W_3A.
