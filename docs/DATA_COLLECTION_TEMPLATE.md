@@ -1,10 +1,10 @@
 # STAT 404 data collection template
 
-Copy the two data sheets below into the shared document. Use ASCII digits and letters. Leave empty cells empty, and do not type NA or a dash. Clock times are not recorded. Only `elapsed_min` is kept.
+Copy the two data sheets below into the shared document. Use ASCII digits and letters. Leave empty cells empty, and do not type NA or a dash. A blank is the only marker for a missing value, so numeric columns read into R as numbers and label columns as tokens. Clock times are not recorded. Only `elapsed_min` is kept.
 
 All labels are English tokens that match the codes in the randomisation table. Charger values are `140W` and `20W`. Cable values are `5A` and `3A`. Treatment values are `140W_5A`, `140W_3A`, `20W_5A` and `20W_3A`. Draw class values are `high` and `low`. These tokens can be read into R without any label conversion.
 
-The response is `rate = delta_soc / elapsed_min` in percent per minute. `delta_soc` is the SOC gain shown on screen. The default window is 40 to 60, so `delta_soc` is 20. Use the real reading if it differs. `elapsed_min` is minutes, so 10:46.98 becomes 10 plus 46.98 divided by 60, which is 10.783.
+The response is `rate = delta_soc / elapsed_min` in % per minute. `delta_soc` is the SOC gain shown on screen. The default window is 40 to 60, so `delta_soc` is 20. Use the real reading if it differs. `elapsed_min` is minutes, so 10:46.98 becomes 10 + 46.98/60 = 10.783.
 
 ---
 
