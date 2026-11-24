@@ -43,31 +43,28 @@ The order is fixed by seed `20261120` and is already filled in the workbook. Do 
 
 | run_id | device_id | device_name | draw_class | slot | treatment | station | charger | cable | soc_start_pct | soc_end_pct | delta_soc | elapsed_min | rate_pct_per_min | screen_wake_ok | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| R01 | D1 | MacBookPro14_M2Pro_2023 | high | 1 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto | 15.325 | auto | yes | Elapsed 15:19.51 with 140W_3A |
-| R02 | D1 | MacBookPro14_M2Pro_2023 | high | 2 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 83.682 | auto | yes | Elapsed 1:23:40.93 with 20W_3A |
-| R03 | D1 | MacBookPro14_M2Pro_2023 | high | 3 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 10.783 | auto | yes | Elapsed 10:46.98 with 140W_5A |
-| R04 | D1 | MacBookPro14_M2Pro_2023 | high | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 86.526 | auto | yes | Elapsed 1:26:31.54 with 20W_5A |
-| R05 | D2 | MacBookPro14_M1_2021 | high | 1 | 140W_5A | 2 | 140W | 5A |  |  | auto |  | auto | yes |  |
+| R01 | D1 | MacBookPro14_M2Pro_2023 | high | 1 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto | 15.325 | auto | yes | 15:19.51 |
+| R02 | D1 | MacBookPro14_M2Pro_2023 | high | 2 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 83.682 | auto | yes | 1:23:40.93 |
+| R03 | D1 | MacBookPro14_M2Pro_2023 | high | 3 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 10.783 | auto | yes | 10:46.98 |
+| R04 | D1 | MacBookPro14_M2Pro_2023 | high | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 86.526 | auto | yes | 1:26:31.54 |
 | R06 | D2 | MacBookPro14_M1_2021 | high | 2 | 20W_3A | 1 | 20W | 3A |  |  | auto |  | auto | yes |  |
 | R07 | D2 | MacBookPro14_M1_2021 | high | 3 | 140W_3A | 2 | 140W | 3A |  |  | auto |  | auto | yes |  |
-| R05 | D2 | MacBookPro14_M1_2021 | high | 1 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 12.228 | auto | yes | Elapsed 12:13.7 with 140W_5A |
-| R09 | D3 | iPhone16Pro | low | 1 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 13.291 | auto | yes | Elapsed 13:17.45 with 20W_3A |
-| R10 | D3 | iPhone16Pro | low | 2 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto | 13.227 | auto | yes | Elapsed 13:13.64 with 140W_3A |
-| R11 | D3 | iPhone16Pro | low | 3 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 13.447 | auto | yes | Elapsed 13:26.82 with 140W_5A |
-| R12 | D3 | iPhone16Pro | low | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 13.06 | auto | yes | Elapsed 13:03.6 with 20W_5A |
+| R05 | D2 | MacBookPro14_M1_2021 | high | 1 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 12.228 | auto | yes | 12:13.7 |
+| R09 | D3 | iPhone16Pro | low | 1 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 13.291 | auto | yes | 13:17.45 |
+| R10 | D3 | iPhone16Pro | low | 2 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto | 13.227 | auto | yes | 13:13.64 |
+| R11 | D3 | iPhone16Pro | low | 3 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 13.447 | auto | yes | 13:26.82 |
+| R12 | D3 | iPhone16Pro | low | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 13.06 | auto | yes | 13:03.6 |
 | R13 | D4 | iPhone17Pro | low | 1 | 140W_5A | 2 | 140W | 5A |  |  | auto |  | auto | yes |  |
 | R14 | D4 | iPhone17Pro | low | 2 | 20W_5A | 1 | 20W | 5A |  |  | auto |  | auto | yes |  |
 | R15 | D4 | iPhone17Pro | low | 3 | 140W_3A | 2 | 140W | 3A |  |  | auto |  | auto | yes |  |
-| R16 | D4 | iPhone17Pro | low | 4 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 11.413 | auto | yes | Elapsed 11:24.77 with 20W_3A |
-| R18 | D5 | iPadPro11_4th | low | 2 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 24.747 | auto | yes | Elapsed 24:44.79 with 20W_3A |
-| R23 | D6 | iPhone15ProMax | low | 3 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 13.671 | auto | yes | Elapsed 13:40.23 with 20W_3A |
+| R16 | D4 | iPhone17Pro | low | 4 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 11.413 | auto | yes | 11:24.77 |
+| R18 | D5 | iPadPro11_4th | low | 2 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 24.747 | auto | yes | 24:44.79 |
+| R23 | D6 | iPhone15ProMax | low | 3 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 13.671 | auto | yes | 13:40.23 |
 | R17 | D5 | iPadPro11_4th | low | 1 | 20W_5A | 2 | 20W | 5A |  |  | auto |  | auto | yes |  |
-| R18 | D5 | iPadPro11_4th | low | 2 | 20W_3A | 2 | 20W | 3A |  |  | auto |  | auto | yes |  |
 | R19 | D5 | iPadPro11_4th | low | 3 | 140W_5A | 1 | 140W | 5A |  |  | auto |  | auto | yes |  |
 | R20 | D5 | iPadPro11_4th | low | 4 | 140W_3A | 1 | 140W | 3A |  |  | auto |  | auto | yes |  |
 | R21 | D6 | iPhone15ProMax | low | 1 | 140W_3A | 1 | 140W | 3A |  |  | auto |  | auto | yes |  |
 | R22 | D6 | iPhone15ProMax | low | 2 | 20W_5A | 2 | 20W | 5A |  |  | auto |  | auto | yes |  |
-| R23 | D6 | iPhone15ProMax | low | 3 | 20W_3A | 2 | 20W | 3A |  |  | auto |  | auto | yes |  |
 | R24 | D6 | iPhone15ProMax | low | 4 | 140W_5A | 1 | 140W | 5A |  |  | auto |  | auto | yes |  |
 | R25 | D7 | HonorPower | low | 1 | 20W_3A | 2 | 20W | 3A |  |  | auto |  | auto | yes |  |
 | R26 | D7 | HonorPower | low | 2 | 20W_5A | 2 | 20W | 5A |  |  | auto |  | auto | yes |  |
@@ -89,28 +86,12 @@ Field notes:
 - `draw_class` is prefilled per device for all eight devices.
 - `screen_wake_ok` is `yes` when wakes were about two minutes apart. Enter `no` and explain in `notes` otherwise.
 
-Twelve observed timings:
-
-- MacBookPro14_M2Pro_2023: 15:19.51 is 15.325 minutes with `140W_3A` at R01.
-- MacBookPro14_M2Pro_2023: 1:23:40.93 is 83.682 minutes with `20W_3A` at R02.
-- MacBookPro14_M2Pro_2023: 10:46.98 is 10.783 minutes with `140W_5A` at R03.
-- MacBookPro14_M2Pro_2023: 1:26:31.54 is 86.526 minutes with `20W_5A` at R04.
-- MacBookPro14_M1_2021: 12:13.7 is 12.228 minutes with `140W_5A` at R05.
-- iPhone16Pro: 13:17.45 is 13.291 minutes with `20W_3A` at R09.
-- iPhone16Pro: 13:13.64 is 13.227 minutes with `140W_3A` at R10.
-- iPhone16Pro: 13:26.82 is 13.447 minutes with `140W_5A` at R11.
-- iPhone16Pro: 13:03.6 is 13.06 minutes with `20W_5A` at R12.
-- iPhone17Pro: 11:24.77 is 11.413 minutes with `20W_3A` at R16.
-- iPadPro11_4th: 24:44.79 is 24.747 minutes with `20W_3A` at R18.
-- iPhone15ProMax: 13:40.23 is 13.671 minutes with `20W_3A` at R23.
-
-draw_class is based on effective draw under the study chargers. Each elapsed time is the duration from the first 40 percent reading to the first 60 percent reading. The runs follow the order set by the randomisation table.
 
 ---
 
 ## Collection order
 
-1. Table 1 and its draw classes are complete. D1, D2 and D8 are `high` and D3 to D7 are `low`. The high group has three devices, so no equipment needs to be borrowed.
+1. Confirm the Table 1 draw classes before filling Table 2. D1, D2 and D8 are `high` and D3 to D7 are `low`. The high group has three devices, so the interaction contrast has support without borrowed equipment.
 2. After the device list is locked, check that the device numbers match the randomisation table. Do not rerun the seed.
 3. Fill Table 2 row by row during collection. Enter each run on the same day and convert the stopwatch reading into minutes.
 4. When all 32 rows and all draw classes are filled, save Table 2 as `runs.csv` under `data/raw/` and run `analysis.R`.
