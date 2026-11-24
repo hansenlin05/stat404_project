@@ -1,6 +1,5 @@
-# Load collected run data.
-# The collection workbook uses English tokens that match randomisation.csv,
-# so no label conversion is needed before analysis.
+# Load collected run data
+# The collection workbook uses tokens that match randomisation.csv
 runs <- read.csv("data/clean/runs.csv", stringsAsFactors = FALSE)
 head(runs)
 names(runs)
@@ -8,15 +7,15 @@ names(runs)
 runs$charger <- factor(runs$charger, levels = c("20W", "140W"))
 runs$cable <- factor(runs$cable, levels = c("3A", "5A"))
 
-# The draw class comes from effective draw under the study chargers, not the seed.
-# Accept both English tokens and the legacy labels for existing sheets.
+# Draw class reflects effective draw under the study chargers
+# Accept either letter case so the sheet and the CSV can be read the same way
 runs$draw_class <- factor(
   ifelse(grepl("^high$", as.character(runs$draw_class), ignore.case = TRUE), "high",
          ifelse(grepl("^low$", as.character(runs$draw_class), ignore.case = TRUE), "low", NA)),
   levels = c("high", "low")
 )
 if (anyNA(runs$draw_class)) {
-  stop("Some runs have no draw_class. Fill the column before analysis. All eight devices are now classified.")
+  stop("Some runs have no draw_class. Fill the column before analysis.")
 }
 class_per_device <- tapply(runs$draw_class, runs$device_name, function(x) {
   length(unique(x[!is.na(x)]))
@@ -25,7 +24,7 @@ if (any(class_per_device > 1)) {
   stop("A device has conflicting draw_class values. Fix the collection sheet first.")
 }
 
-# Each device must contain each treatment exactly once.
+# Each device must contain each treatment exactly once
 runs$treatment <- factor(paste(runs$charger, runs$cable, sep = "_"))
 check_design <- table(runs$device_name, runs$treatment)
 if (nrow(check_design) != 8 || any(check_design != 1)) {
@@ -36,7 +35,7 @@ runs$device <- factor(runs$device_name)
 runs$charge_rate <- runs$delta_soc / runs$elapsed_min
 table(runs$device, runs$treatment)
 
-# Main ANOVA with device blocking.
+# Main ANOVA with device blocking
 fit <- aov(charge_rate ~ device + charger * cable, data = runs)
 summary(fit)
 
@@ -45,22 +44,22 @@ error_degrees_freedom <- df.residual(fit)
 mean_square_error
 error_degrees_freedom
 
-# Treatment cell means and standard errors.
+# Treatment cell means and standard errors
 cells <- expand.grid(charger = c("20W", "140W"), cable = c("3A", "5A"))
 cells$treatment <- paste(cells$charger, cells$cable, sep = "_")
 cells$mean_rate <- tapply(runs$charge_rate, runs$treatment, mean)[cells$treatment]
 cells$standard_error <- sqrt(mean_square_error / 8)
 cells
 
-# All pairwise treatment comparisons.
+# All pairwise treatment comparisons
 fit_treatment <- aov(charge_rate ~ device + treatment, data = runs)
 TukeyHSD(fit_treatment, "treatment")
 
-# Per-device treatment means.
+# Per-device treatment means
 device_means <- tapply(runs$charge_rate, list(runs$device, runs$treatment), mean)
 head(device_means)
 
-# Interaction contrast within each device.
+# Interaction contrast within each device
 device_contrast <- device_means[, "140W_5A"] - device_means[, "140W_3A"] -
   device_means[, "20W_5A"] + device_means[, "20W_3A"]
 device_contrast
@@ -97,7 +96,7 @@ results <- rbind(
 )
 results
 
-# Residual and interaction diagnostics.
+# Residual and interaction diagnostics
 plot(fitted(fit), residuals(fit))
 qqnorm(residuals(fit))
 qqline(residuals(fit))
