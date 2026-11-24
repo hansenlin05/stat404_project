@@ -48,7 +48,7 @@ The order is fixed by seed `20261120` and is already filled in the workbook. Do 
 | R03 | D1 | MacBookPro14_M2Pro_2023 | high | 3 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 10.783 | auto | yes | 10:46.98 |
 | R04 | D1 | MacBookPro14_M2Pro_2023 | high | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 86.526 | auto | yes | 1:26:31.54 |
 | R06 | D2 | MacBookPro14_M1_2021 | high | 2 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 80.685 | auto | yes | 1:20:41.10 |
-| R07 | D2 | MacBookPro14_M1_2021 | high | 3 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R07 | D2 | MacBookPro14_M1_2021 | high | 3 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto | 11.584 | auto | yes | 11:35.03 |
 | R08 | D2 | MacBookPro14_M1_2021 | high | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 79.342 | auto | yes | 1:19:20.53 |
 | R05 | D2 | MacBookPro14_M1_2021 | high | 1 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 12.228 | auto | yes | 12:13.7 |
 | R09 | D3 | iPhone16Pro | low | 1 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 13.291 | auto | yes | 13:17.45 |
