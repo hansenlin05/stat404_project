@@ -59,6 +59,7 @@ The order is fixed by seed `20261120` and is already filled in the workbook. Do 
 | R14 | D4 | iPhone17Pro | low | 2 | 20W_5A | 1 | 20W | 5A |  |  | auto |  | auto | yes |  |
 | R15 | D4 | iPhone17Pro | low | 3 | 140W_3A | 2 | 140W | 3A |  |  | auto |  | auto | yes |  |
 | R16 | D4 | iPhone17Pro | low | 4 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 11.413 | auto | yes | Elapsed 11:24.77 with 20W_3A |
+| R18 | D5 | iPadPro11_4th | low | 2 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 24.747 | auto | yes | Elapsed 24:44.79 with 20W_3A |
 | R23 | D6 | iPhone15ProMax | low | 3 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 13.671 | auto | yes | Elapsed 13:40.23 with 20W_3A |
 | R17 | D5 | iPadPro11_4th | low | 1 | 20W_5A | 2 | 20W | 5A |  |  | auto |  | auto | yes |  |
 | R18 | D5 | iPadPro11_4th | low | 2 | 20W_3A | 2 | 20W | 3A |  |  | auto |  | auto | yes |  |
@@ -88,7 +89,7 @@ Field notes:
 - `draw_class` is prefilled per device for all eight devices.
 - `screen_wake_ok` is `yes` when wakes were about two minutes apart. Enter `no` and explain in `notes` otherwise.
 
-Eleven observed timings:
+Twelve observed timings:
 
 - MacBookPro14_M2Pro_2023: 15:19.51 is 15.325 minutes with `140W_3A` at R01.
 - MacBookPro14_M2Pro_2023: 1:23:40.93 is 83.682 minutes with `20W_3A` at R02.
@@ -100,6 +101,7 @@ Eleven observed timings:
 - iPhone16Pro: 13:26.82 is 13.447 minutes with `140W_5A` at R11.
 - iPhone16Pro: 13:03.6 is 13.06 minutes with `20W_5A` at R12.
 - iPhone17Pro: 11:24.77 is 11.413 minutes with `20W_3A` at R16.
+- iPadPro11_4th: 24:44.79 is 24.747 minutes with `20W_3A` at R18.
 - iPhone15ProMax: 13:40.23 is 13.671 minutes with `20W_3A` at R23.
 
 draw_class is based on effective draw under the study chargers. Each elapsed time is the duration from the first 40 percent reading to the first 60 percent reading. The runs follow the order set by the randomisation table.
