@@ -47,39 +47,40 @@ The order is fixed by seed `20261120` and is already filled in the workbook. Do 
 | R02 | D1 | MacBookPro14_M2Pro_2023 | high | 2 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 83.682 | auto | yes | 1:23:40.93 |
 | R03 | D1 | MacBookPro14_M2Pro_2023 | high | 3 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 10.783 | auto | yes | 10:46.98 |
 | R04 | D1 | MacBookPro14_M2Pro_2023 | high | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 86.526 | auto | yes | 1:26:31.54 |
-| R06 | D2 | MacBookPro14_M1_2021 | high | 2 | 20W_3A | 1 | 20W | 3A |  |  | auto |  | auto | yes |  |
-| R07 | D2 | MacBookPro14_M1_2021 | high | 3 | 140W_3A | 2 | 140W | 3A |  |  | auto |  | auto | yes |  |
+| R06 | D2 | MacBookPro14_M1_2021 | high | 2 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R07 | D2 | MacBookPro14_M1_2021 | high | 3 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R08 | D2 | MacBookPro14_M1_2021 | high | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
 | R05 | D2 | MacBookPro14_M1_2021 | high | 1 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 12.228 | auto | yes | 12:13.7 |
 | R09 | D3 | iPhone16Pro | low | 1 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 13.291 | auto | yes | 13:17.45 |
 | R10 | D3 | iPhone16Pro | low | 2 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto | 13.227 | auto | yes | 13:13.64 |
 | R11 | D3 | iPhone16Pro | low | 3 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 13.447 | auto | yes | 13:26.82 |
 | R12 | D3 | iPhone16Pro | low | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 13.06 | auto | yes | 13:03.6 |
-| R13 | D4 | iPhone17Pro | low | 1 | 140W_5A | 2 | 140W | 5A |  |  | auto |  | auto | yes |  |
-| R14 | D4 | iPhone17Pro | low | 2 | 20W_5A | 1 | 20W | 5A |  |  | auto |  | auto | yes |  |
-| R15 | D4 | iPhone17Pro | low | 3 | 140W_3A | 2 | 140W | 3A |  |  | auto |  | auto | yes |  |
+| R13 | D4 | iPhone17Pro | low | 1 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R14 | D4 | iPhone17Pro | low | 2 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R15 | D4 | iPhone17Pro | low | 3 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
 | R16 | D4 | iPhone17Pro | low | 4 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 11.413 | auto | yes | 11:24.77 |
 | R18 | D5 | iPadPro11_4th | low | 2 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 24.747 | auto | yes | 24:44.79 |
 | R23 | D6 | iPhone15ProMax | low | 3 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 13.671 | auto | yes | 13:40.23 |
-| R17 | D5 | iPadPro11_4th | low | 1 | 20W_5A | 2 | 20W | 5A |  |  | auto |  | auto | yes |  |
-| R19 | D5 | iPadPro11_4th | low | 3 | 140W_5A | 1 | 140W | 5A |  |  | auto |  | auto | yes |  |
-| R20 | D5 | iPadPro11_4th | low | 4 | 140W_3A | 1 | 140W | 3A |  |  | auto |  | auto | yes |  |
-| R21 | D6 | iPhone15ProMax | low | 1 | 140W_3A | 1 | 140W | 3A |  |  | auto |  | auto | yes |  |
-| R22 | D6 | iPhone15ProMax | low | 2 | 20W_5A | 2 | 20W | 5A |  |  | auto |  | auto | yes |  |
-| R24 | D6 | iPhone15ProMax | low | 4 | 140W_5A | 1 | 140W | 5A |  |  | auto |  | auto | yes |  |
-| R25 | D7 | HonorPower | low | 1 | 20W_3A | 2 | 20W | 3A |  |  | auto |  | auto | yes |  |
-| R26 | D7 | HonorPower | low | 2 | 20W_5A | 2 | 20W | 5A |  |  | auto |  | auto | yes |  |
-| R27 | D7 | HonorPower | low | 3 | 140W_5A | 1 | 140W | 5A |  |  | auto |  | auto | yes |  |
-| R28 | D7 | HonorPower | low | 4 | 140W_3A | 1 | 140W | 3A |  |  | auto |  | auto | yes |  |
-| R29 | D8 | MacBookAir_M5 | high | 1 | 140W_5A | 1 | 140W | 5A |  |  | auto |  | auto | yes |  |
-| R30 | D8 | MacBookAir_M5 | high | 2 | 20W_5A | 2 | 20W | 5A |  |  | auto |  | auto | yes |  |
-| R31 | D8 | MacBookAir_M5 | high | 3 | 20W_3A | 2 | 20W | 3A |  |  | auto |  | auto | yes |  |
-| R32 | D8 | MacBookAir_M5 | high | 4 | 140W_3A | 1 | 140W | 3A |  |  | auto |  | auto | yes |  |
+| R17 | D5 | iPadPro11_4th | low | 1 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R19 | D5 | iPadPro11_4th | low | 3 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R20 | D5 | iPadPro11_4th | low | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R21 | D6 | iPhone15ProMax | low | 1 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R22 | D6 | iPhone15ProMax | low | 2 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R24 | D6 | iPhone15ProMax | low | 4 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R25 | D7 | HonorPower | low | 1 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R26 | D7 | HonorPower | low | 2 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R27 | D7 | HonorPower | low | 3 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R28 | D7 | HonorPower | low | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R29 | D8 | MacBookAir_M5 | high | 1 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R30 | D8 | MacBookAir_M5 | high | 2 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R31 | D8 | MacBookAir_M5 | high | 3 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R32 | D8 | MacBookAir_M5 | high | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
 
 Field notes:
 
 - `slot` is the run number within a device, from 1 to 4, set by the randomisation table.
 - `station` is 1 or 2 and is prefilled for all 32 rows. Both stations run at once with one charger each. The chargers swap after run 16.
-- `soc_start_pct` and `soc_end_pct` are screen readings with 40 and 60 as defaults.
+- `soc_start_pct` and `soc_end_pct` are screen readings, prefilled at 40 and 60. Change them if the real reading differs.
 - `delta_soc` is `soc_end_pct - soc_start_pct`, calculated automatically.
 - `elapsed_min` runs from the first 40 percent reading to the first 60 percent reading, with three decimals. Clock times are not needed.
 - `rate_pct_per_min` is `delta_soc / elapsed_min`, calculated automatically.

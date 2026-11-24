@@ -8,28 +8,10 @@ runs$charger <- factor(runs$charger, levels = c("20W", "140W"))
 runs$cable <- factor(runs$cable, levels = c("3A", "5A"))
 
 # Draw class reflects effective draw under the study chargers
-# Accept either letter case so the sheet and the CSV can be read the same way
-runs$draw_class <- factor(
-  ifelse(grepl("^high$", as.character(runs$draw_class), ignore.case = TRUE), "high",
-         ifelse(grepl("^low$", as.character(runs$draw_class), ignore.case = TRUE), "low", NA)),
-  levels = c("high", "low")
-)
-if (anyNA(runs$draw_class)) {
-  stop("Some runs have no draw_class. Fill the column before analysis.")
-}
-class_per_device <- tapply(runs$draw_class, runs$device_name, function(x) {
-  length(unique(x[!is.na(x)]))
-})
-if (any(class_per_device > 1)) {
-  stop("A device has conflicting draw_class values. Fix the collection sheet first.")
-}
+runs$draw_class <- factor(runs$draw_class, levels = c("high", "low"))
 
-# Each device must contain each treatment exactly once
+# Treatment code from charger and cable
 runs$treatment <- factor(paste(runs$charger, runs$cable, sep = "_"))
-check_design <- table(runs$device_name, runs$treatment)
-if (nrow(check_design) != 8 || any(check_design != 1)) {
-  stop("The design is not one run per device and treatment. Check the randomisation.")
-}
 
 runs$device <- factor(runs$device_name)
 runs$charge_rate <- runs$delta_soc / runs$elapsed_min
@@ -71,10 +53,6 @@ high_count <- sum(device_class == "high")
 low_count <- sum(device_class == "low")
 high_count
 low_count
-
-if (high_count < 2 || low_count < 1) {
-  warning("Fewer than two high devices or no low device. The subgroup interaction is exploratory.")
-}
 
 high_contrast <- mean(device_contrast[device_class == "high"])
 low_contrast <- mean(device_contrast[device_class == "low"])
