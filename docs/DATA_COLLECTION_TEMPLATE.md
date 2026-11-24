@@ -55,15 +55,15 @@ The order is fixed by seed `20261120` and is already filled in the workbook. Do 
 | R10 | D3 | iPhone16Pro | low | 2 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto | 13.227 | auto | yes | 13:13.64 |
 | R11 | D3 | iPhone16Pro | low | 3 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 13.447 | auto | yes | 13:26.82 |
 | R12 | D3 | iPhone16Pro | low | 4 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 13.06 | auto | yes | 13:03.6 |
-| R13 | D4 | iPhone17Pro | low | 1 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
-| R14 | D4 | iPhone17Pro | low | 2 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
-| R15 | D4 | iPhone17Pro | low | 3 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R13 | D4 | iPhone17Pro | low | 1 | 140W_5A | 2 | 140W | 5A | 40 | 60 | auto | 11.272 | auto | yes | 11:16.32 |
+| R14 | D4 | iPhone17Pro | low | 2 | 20W_5A | 1 | 20W | 5A | 40 | 60 | auto | 11.266 | auto | yes | 11:15.93 |
+| R15 | D4 | iPhone17Pro | low | 3 | 140W_3A | 2 | 140W | 3A | 40 | 60 | auto | 11.249 | auto | yes | 11:14.94 |
 | R16 | D4 | iPhone17Pro | low | 4 | 20W_3A | 1 | 20W | 3A | 40 | 60 | auto | 11.413 | auto | yes | 11:24.77 |
 | R18 | D5 | iPadPro11_4th | low | 2 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 24.747 | auto | yes | 24:44.79 |
 | R23 | D6 | iPhone15ProMax | low | 3 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 13.671 | auto | yes | 13:40.23 |
-| R17 | D5 | iPadPro11_4th | low | 1 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
+| R17 | D5 | iPadPro11_4th | low | 1 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto | 24.853 | auto | yes | 24:51.18 |
 | R19 | D5 | iPadPro11_4th | low | 3 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
-| R20 | D5 | iPadPro11_4th | low | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R20 | D5 | iPadPro11_4th | low | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto | 22.810 | auto | yes | 22:48.60 |
 | R21 | D6 | iPhone15ProMax | low | 1 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
 | R22 | D6 | iPhone15ProMax | low | 2 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto |  | auto | yes |  |
 | R24 | D6 | iPhone15ProMax | low | 4 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
