@@ -69,12 +69,12 @@ The order is fixed by seed `20261120` and is already filled in the workbook. Do 
 | R24 | D6 | iPhone15ProMax | low | 4 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto | 14.862 | auto | yes | 14:51.70 |
 | R25 | D7 | HonorPower | low | 1 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 34.791 | auto | yes | 34:47.43 |
 | R26 | D7 | HonorPower | low | 2 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto | 34.909 | auto | yes | 34:54.54 |
-| R27 | D7 | HonorPower | low | 3 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto |  | auto | yes |  |
-| R28 | D7 | HonorPower | low | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R27 | D7 | HonorPower | low | 3 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto | 26.342 | auto | yes | 26:20.52 |
+| R28 | D7 | HonorPower | low | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto | 26.332 | auto | yes | 26:19.92 |
 | R29 | D8 | MacBookAir_M5 | high | 1 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto | 18.201 | auto | yes | 18:12.08 |
 | R30 | D8 | MacBookAir_M5 | high | 2 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto | 61.272 | auto | yes | 01:01:16.32 |
 | R31 | D8 | MacBookAir_M5 | high | 3 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 74.724 | auto | yes | 01:14:43:44 |
-| R32 | D8 | MacBookAir_M5 | high | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto |  | auto | yes |  |
+| R32 | D8 | MacBookAir_M5 | high | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto | 20.036 | auto | yes | 20:02.16 |
 
 Field notes:
 
