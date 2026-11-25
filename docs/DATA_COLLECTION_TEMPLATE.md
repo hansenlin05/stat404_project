@@ -74,7 +74,7 @@ The order is fixed by seed `20261120` and is already filled in the workbook. Do 
 | R29 | D8 | MacBookAir_M5 | high | 1 | 140W_5A | 1 | 140W | 5A | 40 | 60 | auto | 18.201 | auto | yes | 18:12.08 |
 | R30 | D8 | MacBookAir_M5 | high | 2 | 20W_5A | 2 | 20W | 5A | 40 | 60 | auto | 61.272 | auto | yes | 01:01:16.32 |
 | R31 | D8 | MacBookAir_M5 | high | 3 | 20W_3A | 2 | 20W | 3A | 40 | 60 | auto | 74.724 | auto | yes | 01:14:43:44 |
-| R32 | D8 | MacBookAir_M5 | high | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto | 20.036 | auto | yes | 20:02.16 |
+| R32 | D8 | MacBookAir_M5 | high | 4 | 140W_3A | 1 | 140W | 3A | 40 | 60 | auto | 19.128 | auto | yes | 19:07.66 |
 
 Field notes:
 
