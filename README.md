@@ -6,18 +6,23 @@ Shared workspace for the STAT 404 group project. This repository keeps raw input
 
 | Path | Use |
 | --- | --- |
-| `docs/` | Progress, tasks, timeline, review feedback, analysis plan, decisions, sources, workflow |
+| `docs/PROJECT_PLAN.md` | single source for timeline, team division, task status, and workflow rules |
+| `docs/PROGRESS.md` | research progress and locked design summary |
+| `docs/ANALYSIS_PLAN.md` | model, degrees of freedom, planned contrasts, diagnostics |
+| `docs/DATA_COLLECTION_TEMPLATE.md` | device classification and run-record definitions |
+| `docs/DECISIONS.md` | locked decisions and retired conclusions |
+| `docs/TA_FEEDBACK.md` | five review comments and agreed responses |
+| `docs/SOURCES.md` | source inventory |
 | `data/raw/` | untouched measurement records |
 | `data/clean/` | analysis-ready data rebuilt from raw files |
 | `scripts/` | randomisation and analysis scripts |
 | `outputs/tables/` | finished tables |
 | `outputs/figures/` | finished figures |
-| `logs/` | run logs from full rebuilds |
 | `archive/` | superseded files, kept only when a current file depends on them |
 
 ## Responsibilities
 
-One teammate owns each area. The current owner for each task is recorded in `docs/TASKS.md`. Edit your own area; comment on someone else's. An owner reads and accepts any change before it is treated as final.
+One teammate owns each area. The current owner for each task is recorded in section 3 of `docs/PROJECT_PLAN.md`. Edit your own area; comment on someone else's. An owner reads and accepts any change before it is treated as final.
 
 ## Rules
 
@@ -29,4 +34,4 @@ Resolve conflicts by reading the content, not by trusting a file name or a times
 
 Before a push, fetch first, rebuild the whole chain from raw inputs, read the logs, check the important numbers against the previous run, scan the text for private references, and compare the two copies that must agree.
 
-See `docs/WORKFLOW.md` for the full checks and `docs/DECISIONS.md` for what is locked and what is retired.
+See section 4 of `docs/PROJECT_PLAN.md` for the full checks and `docs/DECISIONS.md` for what is locked and what is retired. To rebuild: run `scripts/randomise.R` to reproduce the allocation, then `scripts/analysis.R` for the tables and figures.

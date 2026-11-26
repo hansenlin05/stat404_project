@@ -1,5 +1,11 @@
 # Load collected run data
 # The collection workbook uses tokens that match randomisation.csv
+# Figures and tables are written to outputs/ so a fresh clone can rebuild every
+# artefact by running this script from the repository root.
+dir.create("outputs/tables", recursive = TRUE, showWarnings = FALSE)
+dir.create("outputs/figures", recursive = TRUE, showWarnings = FALSE)
+dir.create("logs", recursive = TRUE, showWarnings = FALSE)
+
 runs <- read.csv("data/clean/runs.csv", stringsAsFactors = FALSE)
 head(runs)
 names(runs)
@@ -74,8 +80,26 @@ results <- rbind(
 )
 results
 
-# Residual and interaction diagnostics
-plot(fitted(fit), residuals(fit))
-qqnorm(residuals(fit))
+# Write the ANOVA table, cell means and planned-contrast intervals
+capture.output(summary(fit), file = "outputs/tables/anova.txt")
+write.csv(cells, "outputs/tables/cell_means.csv", row.names = FALSE)
+write.csv(as.data.frame(t(results)), "outputs/tables/planned_contrasts.csv")
+
+# Residual, normality and interaction diagnostics, saved as figures
+png("outputs/figures/residuals_vs_fitted.png", width = 1200, height = 900, res = 150)
+plot(fitted(fit), residuals(fit),
+     xlab = "Fitted rate (% per min)", ylab = "Residual (% per min)",
+     main = "Residuals versus fitted")
+abline(h = 0, lty = 2, col = "grey")
+dev.off()
+
+png("outputs/figures/qq_plot.png", width = 1200, height = 900, res = 150)
+qqnorm(residuals(fit), main = "Normal Q-Q plot of residuals")
 qqline(residuals(fit))
-interaction.plot(runs$charger, runs$cable, runs$charge_rate)
+dev.off()
+
+png("outputs/figures/interaction_plot.png", width = 1200, height = 900, res = 150)
+interaction.plot(runs$charger, runs$cable, runs$charge_rate,
+                 xlab = "Charger", trace.label = "Cable",
+                 ylab = "Mean rate (% per min)", main = "Charger by cable interaction")
+dev.off()

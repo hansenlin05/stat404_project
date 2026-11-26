@@ -12,6 +12,6 @@ This inventory records what each source is for. It does not copy submitted prose
 | `project_proposal_rubric.pdf` | proposal marking, 10 marks, 2% of course grade | current |
 | `project_presentation_rubric.pdf` | presentation marking, 50 marks, 8% of course grade | current |
 | STAT 404 knowledge base, Project folder | holds the same three course PDFs | no additional requirements found |
-| `docs/WORKFLOW.md` | working rules for files, commits, and checks | current |
+| `docs/PROJECT_PLAN.md` | working rules for files, commits, and checks | current; merged from TASKS, TIMELINE, DIVISION_AND_CHECKLIST and WORKFLOW |
 
 The proposal versions and the marked copy stay outside this repository. Only derived records, scripts, and outputs belong here.
