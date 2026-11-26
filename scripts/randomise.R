@@ -1,7 +1,7 @@
 # Randomise treatment order for each device
 set.seed(20261120)
 
-device_names <- c("MacBook Pro 14", "D2", "D3", "D4", "D5", "D6", "D7", "D8")
+device_names <- paste0("D", 1:8)
 treatments <- c("140W_5A", "20W_5A", "140W_3A", "20W_3A")
 chargers <- c("140W", "20W", "140W", "20W")
 cables <- c("5A", "5A", "3A", "3A")

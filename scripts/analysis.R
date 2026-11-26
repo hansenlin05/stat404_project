@@ -1,10 +1,6 @@
 # Load collected run data
-# The collection workbook uses tokens that match randomisation.csv
-# Figures and tables are written to outputs/ so a fresh clone can rebuild every
-# artefact by running this script from the repository root.
 dir.create("outputs/tables", recursive = TRUE, showWarnings = FALSE)
 dir.create("outputs/figures", recursive = TRUE, showWarnings = FALSE)
-dir.create("logs", recursive = TRUE, showWarnings = FALSE)
 
 runs <- read.csv("data/clean/runs.csv", stringsAsFactors = FALSE)
 head(runs)
